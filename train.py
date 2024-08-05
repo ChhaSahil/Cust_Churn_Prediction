@@ -36,7 +36,7 @@ X.drop(['credit_score'],axis=1,inplace=True)
 X['products_number'] = X['products_number'].astype('float64')
 X['age'] = X['age'].astype('float64')
 X['tenure'] = X['tenure'].astype('float64')
-categorical_features_indices = np.where(X.dtypes != np.float)[0]
+categorical_features_indices = np.where(X.dtypes != np.float16)[0]
 
 X_out, y_out = ADASYN(random_state=42).fit_resample(X,y)
 
